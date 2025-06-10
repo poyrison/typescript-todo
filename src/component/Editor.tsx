@@ -92,7 +92,7 @@ const MyFormComponent: React.FC = () => {
   // items나 ITEMS_PER_PAGE가 바뀔 때만 다시 계산되도록 useMemo 사용
   const totalPageCount = useMemo(() => {
     return Math.ceil(items.length / ITEMS_PER_PAGE);
-  }, [items.length, ITEMS_PER_PAGE]);
+  }, [items.length]);
 
   // ✨ 현재 페이지에 보여줄 항목들만 잘라내기 ✨
   // items, currentPage, ITEMS_PER_PAGE가 바뀔 때만 다시 계산되도록 useMemo 사용
@@ -100,7 +100,7 @@ const MyFormComponent: React.FC = () => {
     const startIndex = (currentPage - 1) * ITEMS_PER_PAGE; // 현재 페이지의 시작 인덱스
     const endIndex = startIndex + ITEMS_PER_PAGE; // 현재 페이지의 끝 인덱스
     return items.slice(startIndex, endIndex); // 시작 인덱스부터 끝 인덱스 전까지 잘라내기
-  }, [items, currentPage, ITEMS_PER_PAGE]);
+  }, [items, currentPage]);
 
   // ✨ 페이지 변경 핸들러 ✨
   const handlePageChange = (
