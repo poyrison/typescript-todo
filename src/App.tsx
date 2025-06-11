@@ -10,6 +10,7 @@ import Editor from "./component/Editor";
 import Todo from "./types";
 // import TodoItem from "./component/TodoItem";
 import Header from "./component/Header";
+import Footer from "./component/Footer";
 
 type Action =
   | {
@@ -69,13 +70,14 @@ function App() {
   }, [todos]);
 
   return (
-    <div className="App">
+    <div className="App flex">
       <Header />
       <TodoStateContext.Provider value={todos}>
         <TodoDispatchContext.Provider value={{ onClickAdd, onClickDelete }}>
           <Editor />
         </TodoDispatchContext.Provider>
       </TodoStateContext.Provider>
+      <Footer />
     </div>
   );
 }

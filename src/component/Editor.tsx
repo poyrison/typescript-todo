@@ -111,7 +111,7 @@ const MyFormComponent: React.FC = () => {
   };
 
   return (
-    <Box>
+    <Box sx={{ flexGrow: 1 }}>
       {" "}
       {/* 전체 컨테이너 Box */}
       <Box
@@ -120,7 +120,6 @@ const MyFormComponent: React.FC = () => {
         onSubmit={handleFormSubmit}
         sx={{
           "& > :not(style)": { m: 1, width: "25ch" },
-          display: "flex",
           alignItems: "center",
         }}
         noValidate
@@ -153,7 +152,7 @@ const MyFormComponent: React.FC = () => {
         <List
           sx={{
             mt: 2,
-            bgcolor: "rgba(255, 255, 255, 0.1)",
+            // bgcolor: "rgba(255, 255, 255, 0.1)",
             borderRadius: 1,
             padding: 1,
           }}
